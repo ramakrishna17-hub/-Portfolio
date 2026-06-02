@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramakrishna Chanigarapu — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Resume layout — matches akshith.pdf format visually and structurally */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", Calibri, "Segoe UI", sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.4;
+      color: #1a1a1a;
+      background: #e5e7eb; /* Soft grey background for realistic page-view on desktop */
+    }
+
+    /* Toolbar styling */
+    .resume-toolbar {
+      max-width: 210mm;
+      margin: 16px auto 0;
+      padding: 0 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .toolbar-title {
+      color: #111827;
+      font-weight: 700;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+
+    .resume-toolbar button {
+      background: #1e40af;
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-family: inherit;
+      font-size: 0.85rem;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .resume-toolbar button:hover {
+      background: #1d4ed8;
+    }
+
+    .resume-toolbar button:active {
+      transform: translateY(1px);
+    }
+
+    /* Main A4 Page Layout */
+    .resume-page {
+      max-width: 210mm;
+      min-height: 297mm;
+      margin: 16px auto 40px;
+      background: #fff;
+      padding: 35px 45px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header style - exactly matches Akshith's resume */
+    .resume-header {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .name-container {
+      display: inline-block;
+      border: 1px solid #111827;
+      border-radius: 8px;
+      padding: 6px 36px;
+      margin-bottom: 6px;
+      background: #fdfdfd;
+    }
+
+    .name-container h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: #111827;
+      text-transform: uppercase;
+    }
+
+    .resume-header .subtitle {
+      margin: 0 0 6px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .contact-info {
+      margin-bottom: 6px;
+      font-size: 0.82rem;
+      color: #374151;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .contact-info span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contact-info i {
+      color: #4b5563;
+    }
+
+    .contact-links {
+      font-size: 0.82rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-links a {
+      color: #111827;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.15s ease;
+    }
+
+    .contact-links a:hover {
+      color: #1e40af;
+      text-decoration: underline;
+    }
+
+    .contact-links .divider {
+      color: #9ca3af;
+      font-weight: 300;
+    }
+
+    /* Section styling */
+    .resume-section {
+      margin-top: 14px;
+    }
+
+    .resume-section:first-of-type {
+      margin-top: 8px;
+    }
+
+    .section-title {
+      margin: 0 0 4px 0;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #111827;
+      text-transform: uppercase;
+      border-bottom: 1.5px solid #111827;
+      padding-bottom: 2px;
+    }
+
+    .about-text {
+      margin: 6px 0 0 0;
+      font-size: 0.85rem;
+      line-height: 1.45;
+      color: #374151;
+      text-align: justify;
+    }
+
+    /* Info block: used for Education, Experience, Projects */
+    .info-block {
+      margin-top: 8px;
+    }
+
+    .info-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .title-bold {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .meta-bold {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .info-sub {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 2px;
+    }
+
+    .sub-italic {
+      font-size: 0.82rem;
+      font-style: italic;
+      color: #4b5563;
+    }
+
+    .meta-italic {
+      font-size: 0.82rem;
+      font-style: italic;
+      color: #4b5563;
+    }
+
+    /* Bullet list styling */
+    .bullet-list {
+      margin: 4px 0 0 0;
+      padding-left: 20px;
+    }
+
+    .bullet-list li {
+      font-size: 0.82rem;
+      color: #374151;
+      line-height: 1.4;
+      margin-bottom: 3px;
+    }
+
+    .bullet-list li a {
+      color: #111827;
+      text-decoration: none;
+      border-bottom: 1px dashed #4b5563;
+      transition: color 0.15s ease, border-bottom-color 0.15s ease;
+    }
+
+    .bullet-list li a:hover {
+      color: #1e40af;
+      border-bottom: 1px solid #1e40af;
+    }
+
+    .bullet-list.plain-list {
+      list-style: square;
+    }
+
+    /* Skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1.3fr 0.8fr;
+      gap: 16px;
+      margin-top: 6px;
+    }
+
+    .skills-column p {
+      margin: 0 0 4px 0;
+      font-size: 0.82rem;
+      color: #374151;
+      line-height: 1.35;
+    }
+
+    .skills-column p strong {
+      color: #111827;
+    }
+
+    /* Print optimizations */
+    @media print {
+      body {
+        background: #fff;
+        color: #000;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+
+      .resume-page {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        max-width: none;
+        width: 100%;
+        min-height: auto;
+        background: #fff;
+      }
+
+      @page {
+        size: A4;
+        margin: 1.2cm 1.5cm;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-toolbar no-print">
+    <span class="toolbar-title">Ramakrishna's Professional Resume</span>
+    <button type="button" onclick="window.print()"><i class="fas fa-download"></i> Download / Print PDF</button>
+  </div>
+
+  <article class="resume-page">
+    <header class="resume-header">
+      <div class="name-container">
+        <h1>RAMAKRISHNA CHANIGARAPU</h1>
+      </div>
+      <p class="subtitle">Student</p>
+      <div class="contact-info">
+        <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Mancherial(Telangana), India</span>
+        <span><i class="fas fa-phone-alt" aria-hidden="true"></i> +91 6303512703, +91 9392462970</span>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:ramakrishnachanigarapu01@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> ramakrishnachanigarapu01@gmail.com</a>
+        <span class="divider">|</span>
+        <a href="https://www.linkedin.com/in/ramakrishna-chanigarapu-36122637b" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+        <span class="divider">|</span>
+        <a href="https://github.com/ramakrishna17-hub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+        <span class="divider">|</span>
+        <a href="https://ramakrishna17-hub.github.io/portfolio-/" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe" aria-hidden="true"></i> Portfolio</a>
+      </div>
+    </header>
+
+    <section class="resume-section">
+      <h2 class="section-title">ABOUT ME</h2>
+      <p class="about-text">
+        Computer Science Engineering student with a strong foundation in programming and web development, seeking internship and entry-level opportunities. Skilled in Python, Java, HTML, CSS, and JavaScript with experience building responsive web applications and academic projects. Eager to apply technical knowledge, learn industry practices, and contribute to innovative solutions in a collaborative environment.
+      </p>
+    </section>
+
+    <section class="resume-section">
+      <h2 class="section-title">EDUCATION</h2>
+      
+      <div class="info-block">
+        <div class="info-header">
+          <span class="title-bold">CMR College of Engineering and Technology</span>
+          <span class="meta-bold">Current CGPA: 7.5</span>
+        </div>
+        <div class="info-sub">
+          <span class="sub-italic">B.Tech in Computer Science &amp; Engineering</span>
+          <span class="meta-italic">Expected 2028</span>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-header">
+          <span class="title-bold">Singareni Collieries Polytechnic College, Naspur — Mancherial</span>
+          <span class="meta-bold">GPA: 8.2</span>
+        </div>
+        <div class="info-sub">
+          <span class="sub-italic">Diploma in Computer Science &amp; Engineering</span>
+          <span class="meta-italic">2022 - 2025</span>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-header">
+          <span class="title-bold">Sri Chaitanya High School, Mandamarri</span>
+          <span class="meta-bold">GPA: 9.2</span>
+        </div>
+        <div class="info-sub">
+          <span class="sub-italic">Secondary School Certificate (SSC), Telangana State Board</span>
+          <span class="meta-italic">2022</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="resume-section">
+      <h2 class="section-title">WORK EXPERIENCE</h2>
+      
+      <div class="info-block">
+        <div class="info-header">
+          <span class="title-bold">Singareni Collieries Company Limited (SCCL)</span>
+          <span class="meta-bold">Mandamarri</span>
+        </div>
+        <div class="info-sub">
+          <span class="sub-italic">Industrial Trainee</span>
+          <span class="meta-italic">Nov 2024 – May 2025</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Assisted in software development and IT support while troubleshooting technical issues and improving system performance.</li>
+          <li>Gained hands-on experience in networking, databases, cybersecurity, and teamwork in an industrial environment.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="resume-section">
+      <h2 class="section-title">CERTIFICATIONS</h2>
+      <ul class="bullet-list plain-list">
+        <li>Prompt Engineering - Infosys Springboard</li>
+        <li>Cybersecurity Analyst Job Simulation - Forage</li>
+      </ul>
+    </section>
+
+    <section class="resume-section">
+      <h2 class="section-title">SKILLS</h2>
+      <div class="skills-grid">
+        <div class="skills-column">
+          <p><strong>Programming:</strong> C | C++ | Java | Python</p>
+          <p><strong>Databases:</strong> SQL</p>
+          <p><strong>Web:</strong> HTML | CSS | JavaScript</p>
+        </div>
+        <div class="skills-column">
+          <p><strong>Other Skills:</strong> Machine Learning</p>
+          <p><strong>Source &amp; Version Control:</strong> Git | GitHub</p>
+          <p><strong>Coursework:</strong> DSA | OOP | Web Technologies | DBMS | CN | Technical Writing</p>
+        </div>
+        <div class="skills-column">
+          <p><strong>Tools:</strong> Visual Studio Code</p>
+        </div>
+      </div>
+    </section>
+  </article>
+</body>
+</html>

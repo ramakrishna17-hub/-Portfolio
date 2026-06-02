@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ramakrishna Chanigarapu — Student portfolio">
+  <title>Ramakrishna Chanigarapu | Student Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <header class="navbar">
+    <div class="container nav-wrapper">
+      <a href="#home" class="logo">✦ Ramakrishna</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#tabbed-section" data-tab="skills">Skills</a></li>
+          <li><a href="#tabbed-section" data-tab="experience">Experience</a></li>
+          <li><a href="#tabbed-section" data-tab="education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <button type="button" id="themeSwitchBtn" class="theme-toggle-btn" aria-label="Toggle theme">
+              <i class="fas fa-moon" aria-hidden="true"></i> Dark
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1>I'm <span class="hero-name-highlight">Ramakrishna Chanigarapu</span></h1>
+          <p class="hero-title">B.Tech Student · Computer Science Engineering</p>
+          <div class="btn-group">
+            <a href="#contact" class="btn btn-primary">Get In Touch <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="#tabbed-section" class="btn btn-outline" data-tab="skills">View Skills</a>
+            <a href="resume.html" target="_blank" class="btn btn-outline"><i class="fas fa-eye" aria-hidden="true"></i> View Resume</a>
+            <a href="resume.html" target="_blank" class="btn btn-outline"><i class="fas fa-download" aria-hidden="true"></i> Download Resume</a>
+          </div>
+        </div>
+        <div class="hero-badge">
+          <div class="hero-avatar" aria-hidden="true">RC</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-card">
+          <p>
+            I studied at Sri Chaitanya High School, Mandamarri, Mancherial, Telangana, and
+            completed my Diploma in Computer Science Engineering from Singareni Collieries
+            Polytechnic College, Naspur, Mancherial. I am now in my second year of B.Tech
+            at CMR College of Engineering and Technology, building on programming, web
+            development, and engineering fundamentals.
+          </p>
+          <div class="about-meta">
+            <span><strong>Email:</strong> <a href="mailto:ramakrishnachanigarapu01@gmail.com">ramakrishnachanigarapu01@gmail.com</a></span>
+            <span><strong>Phone:</strong> <a href="tel:+916303512703">6303512703</a> · <a href="tel:+919392462970">9392462970</a></span>
+            <span><strong>College:</strong> CMR College of Engineering and Technology</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tabbed-section" class="tabbed-section">
+      <div class="container">
+        <div class="tab-headers" role="tablist" aria-label="Portfolio sections">
+          <button type="button" class="tab-btn active" data-tab="skills" role="tab" aria-selected="true">
+            <i class="fas fa-code" aria-hidden="true"></i> Skills
+          </button>
+          <button type="button" class="tab-btn" data-tab="experience" role="tab" aria-selected="false">
+            <i class="fas fa-briefcase" aria-hidden="true"></i> Experience
+          </button>
+          <button type="button" class="tab-btn" data-tab="education" role="tab" aria-selected="false">
+            <i class="fas fa-graduation-cap" aria-hidden="true"></i> Education
+          </button>
+        </div>
+
+        <div class="tab-pane active-pane" id="skillsPane" role="tabpanel">
+          <div class="skills-grid">
+            <article class="skill-card">
+              <i class="fas fa-code" aria-hidden="true"></i>
+              <h3>Programming</h3>
+              <ul class="skill-list">
+                <li>Python</li>
+                <li>C / C++</li>
+                <li>Java</li>
+                <li>OOP basics</li>
+              </ul>
+            </article>
+            <article class="skill-card">
+              <i class="fas fa-laptop-code" aria-hidden="true"></i>
+              <h3>Web &amp; Databases</h3>
+              <ul class="skill-list">
+                <li>HTML5 / CSS3</li>
+                <li>JavaScript</li>
+                <li>SQL Databases</li>
+                <li>Responsive UI</li>
+              </ul>
+            </article>
+            <article class="skill-card">
+              <i class="fas fa-certificate" aria-hidden="true"></i>
+              <h3>Certifications</h3>
+              <ul class="skill-list">
+                <li>Prompt Engineering (Infosys)</li>
+                <li>Cybersecurity Simulation (Forage)</li>
+              </ul>
+            </article>
+            <article class="skill-card">
+              <i class="fas fa-tools" aria-hidden="true"></i>
+              <h3>Tools &amp; Coursework</h3>
+              <ul class="skill-list">
+                <li>Git &amp; GitHub | VS Code</li>
+                <li>DSA | DBMS | CN</li>
+                <li>Technical Writing</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+
+        <div class="tab-pane" id="experiencePane" role="tabpanel" hidden>
+          <div class="education-grid">
+            <article class="edu-card">
+              <h3>Industrial Trainee</h3>
+              <p class="edu-institution">Singareni Collieries Company Limited (SCCL)</p>
+              <p class="edu-date">Nov 2024 — May 2025 · Mandamarri</p>
+              <p class="edu-desc">
+                Assisted in software development and IT support while troubleshooting technical issues and improving system performance. Gained hands-on experience in networking, databases, cybersecurity, and teamwork in an industrial environment.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <div class="tab-pane" id="educationPane" role="tabpanel" hidden>
+          <div class="education-grid">
+            <article class="edu-card">
+              <h3>B.Tech — 2nd Year <span class="gpa-tag">CGPA: 7.5</span></h3>
+              <p class="edu-institution">CMR College of Engineering and Technology</p>
+              <p class="edu-date">Present · Expected 2028</p>
+              <p class="edu-desc">
+                Pursuing undergraduate studies in computer science engineering with focus on
+                programming, web technologies, and core engineering subjects through coursework and labs.
+              </p>
+            </article>
+            <article class="edu-card">
+              <h3>Diploma in Computer Science Engineering <span class="gpa-tag">GPA: 8.2</span></h3>
+              <p class="edu-institution">Singareni Collieries Polytechnic College</p>
+              <p class="edu-date">Completed · 2022 - 2025 · Naspur, Mancherial, Telangana</p>
+              <p class="edu-desc">
+                Built a strong foundation in computer science, programming, databases, and
+                engineering fundamentals with hands-on lab and project experience.
+              </p>
+            </article>
+            <article class="edu-card">
+              <h3>Secondary School Certificate (SSC) <span class="gpa-tag">GPA: 9.2</span></h3>
+              <p class="edu-institution">Sri Chaitanya High School</p>
+              <p class="edu-date">Completed · 2022 · Mandamarri, Mancherial, Telangana</p>
+              <p class="edu-desc">
+                Completed schooling with a solid academic base before pursuing diploma and
+                degree programs in computer science engineering.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-flex">
+          <div class="contact-info">
+            <div class="contact-detail">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <a href="mailto:ramakrishnachanigarapu01@gmail.com">ramakrishnachanigarapu01@gmail.com</a>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-phone-alt" aria-hidden="true"></i>
+              <span>
+                <a href="tel:+916303512703">6303512703</a> ·
+                <a href="tel:+919392462970">9392462970</a>
+              </span>
+            </div>
+            <div class="contact-detail">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+              <a href="https://www.linkedin.com/in/ramakrishna-chanigarapu-36122637b" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+              <span>Mancherial, Telangana, India</span>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form id="contactForm">
+              <label class="sr-only" for="contactName">Full name</label>
+              <input type="text" id="contactName" placeholder="Full Name" required>
+              <label class="sr-only" for="contactEmail">Email</label>
+              <input type="email" id="contactEmail" placeholder="Email Address" required>
+              <label class="sr-only" for="contactMsg">Message</label>
+              <textarea id="contactMsg" rows="4" placeholder="Your Message" required></textarea>
+              <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane" aria-hidden="true"></i></button>
+            </form>
+            <p id="formFeedback" class="form-feedback" role="status"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Ramakrishna Chanigarapu — B.Tech Student Portfolio</p>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/ramakrishna-chanigarapu-36122637b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+        <a href="https://github.com/ramakrishna17-hub" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        <a href="mailto:ramakrishnachanigarapu01@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
